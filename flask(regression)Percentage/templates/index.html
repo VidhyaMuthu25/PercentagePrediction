@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+<style>
+#percent {
+    background-color:#F2F7F9;
+    width:465px;
+    padding:20px;
+    margin: 50px auto;    
+    border: 6px solid #8FB5C1;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    position:relative;
+}
+#percent h3 {
+    font-size:22px;
+    text-align: center;
+}
+ 
+#percent h3 {
+    margin-bottom:15px;
+    font-style:italic;
+    font-weight:normal;
+}
+ 
+
+}
+}
+</style>
+</head>
+
+<body bgcolor="LightSeaGreen">
+<div id="percent">
+ 
+	<h3><b>PERCENTAGE PREDICTION</b></h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+	
+    	<input type="text" name="Hours" placeholder="Hours" required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Percentage</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+</div>
+
+
+</body>
+</html>
+
